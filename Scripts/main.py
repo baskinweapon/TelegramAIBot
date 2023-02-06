@@ -1,6 +1,6 @@
 from typing import List
 
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, BotCommand
 from telegram.ext import filters, ApplicationBuilder, CommandHandler, ContextTypes, MessageHandler, InlineQueryHandler, \
     CallbackQueryHandler
 import Data
@@ -14,9 +14,14 @@ async def collect_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
                                    text=collect(update.message.text))
 
 async def reseive_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await context.bot.send_message(chat_id=update.effective_chat.id,
-                                   text=find_best(update.message.text),
-                                   reply_markup=reply_markup)
+    text = find_best(update.message.text)
+    if weights:
+        await context.bot.send_message(chat_id=update.effective_chat.id,
+                                       text=text,
+                                       reply_markup=reply_markup)
+    else:
+        await context.bot.send_message(chat_id=update.effective_chat.id,
+                                       text=text)
 
 # callbacks openAI
 async def open_ai_init(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -120,7 +125,6 @@ if __name__ == '__main__':
             InlineKeyboardButton("👎🏻", callback_data="1"),
         ],
     ]
-
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     # start bot
