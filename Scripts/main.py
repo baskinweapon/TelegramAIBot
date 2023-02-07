@@ -38,6 +38,10 @@ async def open_ai_deinit(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.effective_chat.id,
                                    text="Data Base <Призыв к совести> here, your question?")
 
+async def present(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await context.bot.send_message(chat_id=update.effective_chat.id,
+                                   text=Data.presentMessage)
+
 # Save info about user and sent to call center
 def collect(message):
     # add send your call center information
@@ -64,7 +68,7 @@ def like():
         if id(weight) == id(current_weight):
             weight.weight = current_weight.weight
     d.load_to_json(data)
-    return "🫡Thank you for answer"
+    return Data.likeMessage
 
 def find_best(message):
     weights.clear()
@@ -84,7 +88,7 @@ def find_best(message):
 
     weights.sort(key=lambda x: x.weight)
     if not weights:
-        return "Sorry, I cant find information. I was born recently, I don't know much, but I love to learn"
+        return Data.didntFindWeight
     else:
         current_weight = weights[-1]
         return weights[-1].answer
@@ -105,7 +109,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             text = weights[-2]
         else:
             colect_info = True
-            text = "Sorry i can't find information, please write your problem and i send it to Call Center"
+            text = Data.collectInfoMessage
         answer += "\n" + text
     await query.edit_message_text(text=f"{answer}")
     if colect_info:
@@ -138,7 +142,8 @@ if __name__ == '__main__':
 
     application.add_handler(receiveMessage)
     application.add_handler(CallbackQueryHandler(button))
-    application.add_handler(CommandHandler("onAI", open_ai_init))
-    application.add_handler(CommandHandler("offAI", open_ai_deinit))
+    application.add_handler(CommandHandler("start", present))
+    application.add_handler(CommandHandler("gpt", open_ai_init))
+    application.add_handler(CommandHandler("data", open_ai_deinit))
 
     application.run_polling()

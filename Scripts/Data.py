@@ -2,6 +2,11 @@ import json
 
 from Scripts.Token import dataPath
 
+presentMessage = "Это бот проекта <Призыв к совести>"
+likeMessage = "🫡Thank you for answer"
+didntFindWeight = "Sorry, I cant find information. I was born recently, I don't know much, but I love to learn"
+collectInfoMessage = "Sorry i can't find information, please write your problem and i send it to Call Center"
+
 class Weight:
     def __init__(self, weight, value, answer, tags, need_question):
         self.weight = weight
