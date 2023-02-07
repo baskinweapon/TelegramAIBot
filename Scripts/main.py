@@ -43,6 +43,8 @@ def collect(message):
     # add send your call center information
     print(message)
 
+    # write your code here
+
     application.remove_handler(collectInfo)
     application.add_handler(receiveMessage)
     return "Thank you, our call center call you in monday at 12:00"
