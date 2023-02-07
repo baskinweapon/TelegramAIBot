@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd621c15-dff0-4e51-a8c4-d532f668c5de" name="Changes" comment="add readme">
-      <change afterPath="$PROJECT_DIR$/readme_eng.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data.json" beforeDir="false" afterPath="$PROJECT_DIR$/Data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReadMe.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme_ru.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="fd621c15-dff0-4e51-a8c4-d532f668c5de" name="Changes" comment="last fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +86,7 @@
       <updated>1675429756017</updated>
       <workItem from="1675429761287" duration="1021000" />
       <workItem from="1675430817739" duration="4219000" />
-      <workItem from="1675435062912" duration="30647000" />
+      <workItem from="1675435062912" duration="31423000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1675516149676</created>
@@ -137,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675771938290</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="last fix">
+      <created>1675781898570</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1675781898570</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,7 +150,8 @@
     <MESSAGE value="add openAI" />
     <MESSAGE value="beta fix" />
     <MESSAGE value="add readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="add readme" />
+    <MESSAGE value="last fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="last fix" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Python$main.coverage" NAME="main Coverage Results" MODIFIED="1675781335181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
