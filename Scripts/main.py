@@ -111,7 +111,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
             colect_info = True
             text = Data.collectInfoMessage
         answer += "\n" + text
-    await query.edit_message_text(text=f"{answer}")
+    await query.edit_message_text(text=f"{query.message.text}")
     if colect_info:
         application.remove_handler(receiveMessage)
         application.add_handler(collectInfo)
